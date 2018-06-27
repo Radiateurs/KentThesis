@@ -1,0 +1,44 @@
+\documentclass[a4paper, 12pt, english]{article}
+
+\usepackage[margin=0.8in]{geometry}
+\usepackage{hyperref}
+
+\title{Critical Review: Detection of motor imagery of swallow EEG signals based on the dual-tree complex wavelet transform and adaptive model selection}
+\author{Pierre-Marie Danieau - prld2 - prld2@kent.ac.uk\\ Msc Computer Sciences (computational intelligence)}
+
+\begin{document}
+\maketitle
+
+\textbf{Reference}: Detection of motor imagery of swallow EEG signals based on the dual-tree complex wavelet transform and adaptive model selection\\
+Authors: H. Yang, C. Guan, K. S. Geok Chua, S.S. Chok, C. Chu Wang, P. Kok Soon, C. K. Yin Tang and K. Ken Ang.
+Published in Journal of Neural Engineering (11) - 19 May 2014
+\clearpage
+
+\section{Summary}
+\subsection{Motivation}
+The paper focus on the detection of swallowing using Electroencephalogram (EEG) captors to find new way of rehabilitations in post-stroke patient (i.e. dysphagia or others neuro-degenerative diseases). Dysphagia represents 30 to 42\% of acute stroke patients. This means that the patient can't properly control his oropharyngeal ang post-pharyngeal region. 1 out of 25 persons are touched by swallowing problem each year in the U.S. (according to \href{https://www.asha.org/PRPSpecificTopic.aspx?folderid=8589942550&section=Incidence_and_Prevalence}{asha.org}). This is a real problem that can lead to choking, vomiting, persistent salivation and other side effect that can lead to hospitalisation or even death. The problem is real and actual. The goal of the authors is to see if it is possible to detect motor imagery of swallowing (MI-SW) and tongue protrusion (MI-Ton). The second goal is to build a model from MI-Ton to detect MI-SW and to determine the accuracy of their classification from their hypothesis and on volunteers (10 healthy, one with chronic stroke) to classify further inputs. With the results, treatment method can evolve and artificial swallowing can be developed.
+
+\subsection{Contribution}
+A lot of the algorithms used in this paper are already used in a lot of different and similar applications. However, the method applied around those algorithms such as the accuracy selection into the different methods used is innovative. Their approach to the problems encountered is surely common, yet it shows a deep reflexion to have the greatest results. The feature engineering around the data are smartly made and the fact that they try to increase the accuracy by modifying the algorithm itself is also new but not universal in term of generalized algorithm (i.e. it can't be applied to any applications) since the modification are made to optimize the results on the classification of the data on a certain topic and particular signals (EEG have different areas of investigation, ignoring or putting more importance to some can lead to better results).
+
+\subsection{Methodology}
+To answer their hypothesis, the authors use multiple algorithms that have been proved to be efficient. Starting with the \textbf{dual-tree complex wavelet transform} algorithm to interpret the signals and create features from it. They interpreted up to 23 features form the received signals. From this they have built an adaptive model selection for \textbf{session-to-session classification}. They basically calculate the distance of the data from the vector's model to classify if the subject think of swallowing (MI-SW) or moving its tongue (MI-Ton). In order to create the model, they use the \textbf{k-fold cross-validation} method (with k = 10).
+
+\subsection{Conclusion}
+From the work made by the authors, we shortly can conclude that any EEG based application \textit{should} use a wavelet transform method since the signal received are in a wavelet form. The result given by the authors is an interpretations of the signals made by the thoughts of swallowing and moving the tongue which can be used in different application by adapting the features and the inputs to a different topic. For example this can be adapted to classify inputs to detect the thought of a movement or any motor oriented imagery. This is not generalized in term of applying this methodology for predicting something, but it is usable by stating in its field. The main problem bring by the results is the lack of subjects that could lead to wrong interpretation. In order to have a \textit{sightly perfect} model, a higher number of participants must be acquired.
+
+\section{Critique}
+The methodology and contribution of this paper are very known from the EEG detection field. They are used in multiple applications and actual commercialized EEG applications (such as sleep or mood tracking devices and others). The fact that they could detect MI-SW with the model build for MI-Ton is pretty surprising, but predictable at the same time since swallowing involves tongue movement. But with those researchs it opens to different approach of detection using EEG by analysing different area or the different way of thinking on the topic. They base their model on the dual-tree complex wavelet transform (DTCWT) but they could use different algorithms to detect swallowing. For example a more simple discrete wavelet transform (DWT) algorithm (DTCWT is an enhancement of  DWT).
+
+The authors are also very open on the difficulty encountered and the problem or irrelevent results. They give multiple table showing their results and from those they decide to eliminate the worst to investigating and improve the greatest. Everything is well explained and the information is available even for the errors made by them. They expose the time of computation and their lack of volunteers that led to less accurate results. Another fact pointed is that from the 10-20 system used, they have 32 inputs and only 30 are used in the algorithm. The argument on those 30 inputs used is not clear. Why 10-20 system ? Why not a 10-5 or 10-10 ? Knowing that each system can be applied to different needs, some of them could have been more accurate to their needs.
+
+\section{Synthesis}
+This research is surely a success from its perspective, but a lot of improvements and alternative methods could have been done. Most of the problems are brought to our attention by the authors, but they don't investigate enough those problems.
+
+The first relevent problem is the lack of volunteers that lead to have less diversity in the data harvested during the research. Of course it is something hard to acquire. Either by lack of funding or lack of subjects. An other parameter is that the study has been made in Singapore, which is a different culture and \textit{maybe} people are less enthusiast to volunteer in those type of research. This is a hypothesis but the human factor is the main factor in this research. 
+
+The second problem that has been poorly fixed is the big amount of input they have. 
+They used a 10-20 system, a formation of EEG electrode that lead to monitor 10 to 20\% of the brain activity depending of the zone monitored. This lead to have 32 inputs which is big. In the paper they mention that they had to ignore 1 set of inputs because it was interfering in a bad way with the algorithms (which leaded to have 30 inputs since electrode are formed by pair).
+If they used less electrode to focus on the area of the brain that control the motion and the extra areas linked to swallowing this would have involved better results and more accurate model. This could have been, then, mixed with more extended captor formations in order to improve and create even more accurate models.
+
+\end{document}

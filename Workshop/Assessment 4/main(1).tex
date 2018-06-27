@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper]{book}
+\usepackage{graphics}
+\usepackage{hyperref}
+
+% To generate dummy text with \blindtext etc
+\usepackage[latin5]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+
+
+\author{Julien Lange}
+
+\title{An Dummy \LaTeX\ Document}
+
+
+\begin{document}
+
+
+
+% Make front page / title
+\maketitle 
+
+% Create table of contents
+\tableofcontents
+
+
+% Starred sections will not appear in ToC
+\chapter*{Acknowledgements} 
+
+\blindtext
+
+\chapter{A first chapter}
+
+\section{A first section}
+
+\blindtext
+
+\begin{figure}[t]
+  \centering
+  \includegraphics{kentlogo.png}
+  \caption{A figure.}
+  \label{fig:myfigure}
+\end{figure}
+
+\blindtext
+
+A reference to Figure~\ref{fig:myfigure}, which is automatically
+handled by latex.
+
+\section{A second section}
+\Blindtext
+
+\Blindtext
+
+Here I cite this paper~\cite{LangeY17} and this other
+paper~\cite{LangeNTY17}.
+
+\chapter{A second chapter}
+
+\section{Another first section}
+\blindtext
+
+\section{A second section}
+\blindtext
+
+\chapter{A third chapter}
+
+\Blindtext
+
+\chapter{Conclusions}
+
+
+\Blindtext
+
+% Generate random text
+
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

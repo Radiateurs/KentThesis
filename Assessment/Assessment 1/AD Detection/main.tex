@@ -1,0 +1,41 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[margin=0.8in]{geometry}
+
+\title{Critical Review : Alzheimer's early prediction with Electroencephalogram}
+\author{Pierre-Marie Danieau - prld2 - prld2@kent.ac.uk\\ Msc Computer Sciences (computational intelligence)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+As part of the module Project Research (CO885), every student have to critique a paper in the field of their topic. My subject being "Investigating into methods for neurological disease", my choice fell on the paper "Alzheimer's early prediction with electroencepahlogram". I summarize their motivations, how they innovated, their methods and the conclusion of their works. From this I give my opinion on how the paper is formed. Mostly on the explainations of the algorithms, the terms used and the elements avoided. Finally I give my opinion on how they could have increase their work to have more accurate result.
+\end{abstract}
+
+\textbf{Reference} : Alzheimer's early prediction with electroencephalogram. Authors : Pedro M. Rodrigues, Jo\~ao P. Teixeira, Carolina Garrett, D\'ilio Alves and Diamantino Freitas (published by Elsevier). 2016.
+
+\clearpage
+
+
+\section{Summary}
+\subsection{Motivation} \label{mot}
+This paper concentrate on the detection of the Alzheimer disease (AD) in early stages. AD is a neurodegenerative brain that is currently incurable.
+There is 4 stages in this disease : Pré-dementia also called Mild Cognitive Imparement (MCI) that is not necessarily classified as AD. Mild AD and Moderate AD are the second and third stages. The fourth stage is called Advanced AD stage. The goal of the work made by the authors is to predict the disease in MCI stage and hopefully even before the first symptoms. This could lead in early treatment that are already available and could help many person that could be in the futur - or are already - touched by this disease.
+\subsection{Contribution} \label{con}
+In order to manipulate and transpose the data received by the Electroencephalogram (EEG) captors for their application, they use Wavelet transform algorithms that is used in severals statistics programs involving EEG. With those data trasformed they use statistics test to analize them such as the Kolmogrov-Smirnov test, the Levene's test and the (Wilcoxon-) Mann-Whitney U test (see more at section \ref{met}). Those test and algorithms used aren't made by them at all but the usage of all of them make the solution innovative.
+\subsection{Methodology} \label{met}
+As said earlier, the authors use EEG in order to predict AD. EEG are captors that are placed on the head of the subject in order to receive signal from the electromagnetic activity of the brain. To interpret those signals (that are referenced as Wavelet) the authors use a Wavelet Transform (WT) function. They used a Discrete Wavelet Transform implementation since the brain's activity is discrete in time. From those data the authors create set of features relative to the signal. With those features and data they first used the Kolomogorov-Smirnov test to get the normality of the parameters (to test if the data set followed a rule). Then they applied the Levene's test to see the \textit{homoscedasticity} (homogeneity of variance)  of the data set. Finally they implemented the Mann-Whitney U test to analysis the differencies between the different group of frequency of the signal received. This application failed to reach the expect results. Not loosing hope they used two classifications algorithms mixed with a genetic algorithms in order to learn and therfore predict AD. The first classification algorithm is \textit{leave-one-out-cross-validation} (LCV) a method that generalize the error, it picks one point of the data and create a model from the remaining points and test the errors on the point picked and repeat this with every single point of the data set. The second one is called \textit{10-fold-cross-validation} (10FCV) which is a statistic validation methods called \textit{\textbf{k}-fold-cross-validation} where the data are separated in \textbf{k} sub-sample data set and uses one sub-sample to test the model created by the rest of the sub-sample and repeat on each sub-sample.
+\subsection{Conclusion}
+From their result, the solution can be used to predict AD in early stages with a classification error of 6.98\% using 10 features and the LCV. This conclusion lead to the fact that surrogate decision tree mixed with features analysis and cross validation is a good method to detect AD in early stages.
+
+\section{Critique}
+This paper has been made in October 2016, making it really young. Yet, it answers an actual big problem. Nowaday, a person must go throught 4 diagnostics to be diagnosed with Alzheimer's disease. Those tests are a medical history, a mental and mood status test, a physical and neurological exam and a blood test followed with a brain imaging. Those four tests are long, expensive and not available everywhere. There's not IRM in every hospital, blood test takes time, and those tests are stressing for the patients. The solution bring by the authors is cheap, available by any medcal center (the cheapest EEG captors set is 60\$) and doesn't require long study of the technology to be manipulated. With this, everybody could be dignosed easily, quickly and without an expensive cost. 
+
+The problem here is that the contributions aren't innovtive at all, the authors only apply algorithms on an open-problem. Mistakes are done sometimes but the solution is efficient enough to be used. A lot of methods aren't fully explained. For example the genetic algorithm isn't explained at all, it's just cited once and we don't even know it's real purpose. None of the algorithms or tests are explained and the paper assumes that the reader knows them. Which isn't true. The paper skip some explainations on purpose making the reading and the understanding of the paper hard.
+
+However, the work made by the authors and their results are a good opportunity to the world to increase its knowledge on AD. Improve its detection for a cheap price and a shorter amount of time. This isn't a solution for AD, but it's a short term tools for finding a cure to it.
+
+\section{Synthesis}
+In the work made by the authors, the only "input" is the activity of the brain on rest. They focus on how the signal received from the brain are affected according to high and low frequencies. This method seems to work according to the result. I do think that their solution is efficient but they take paths that could be shortend. For exemple we knows that the brain react to some stimulus. Since AD is responsible to decrease the high frequencies and increase low ones, and it's also responsible for neurogeneration so some part of the brain are affected and reacts differently. By interacting with the subjects and recolting datas in others part of the brain (and keeping the scalp-loci area) they could be more accurate and even find news data for the research of a cure to AD.
+
+\end{document}
